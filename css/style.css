@@ -1,0 +1,96 @@
+
+:root{
+    --bg-dark: #3d1142;
+    --bg-accent: #121985;
+    --text: #f2f2f2;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--text);
+    background:
+        radial-gradient(ellipse at top, rgba(120, 60, 200, 0.35), transparent 60%),
+        linear-gradient(180deg, var(--bg-accent), var(--bg-dark));
+    background-attachment: fixed;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 1rem;
+    color:rgba(164, 131, 206, 0.253)
+}
+
+header {
+    text-align: center;
+}
+
+#main_page_container {
+    min-height: 100vh;
+    min-height: 100dvh; /* accounts for mobile browser toolbars; ignored if unsupported */
+    display: flex;
+    flex-direction: column;
+}
+
+#card {
+    background-color: #f0f0f02f;
+    min-height: 25em;
+    border-radius: 25px;
+    margin: 1em 20%;
+    padding: 1em;
+}
+
+#button_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#load_consoles {
+    padding: 0.75em 1.75em;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--text);
+    background: linear-gradient(135deg, #7b3fe4, #121985);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 999px; /* pill shape */
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+#load_consoles:hover {
+    box-shadow: 0 8px 20px rgba(120, 60, 200, 0.5);
+}
+
+#load_consoles:active {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+#load_consoles:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    filter: none;
+}
+
+#summary{
+    text-align: center;
+}
+
+.console_card{
+    margin: 1em;
+    padding: 0.5em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(127, 255, 212, 0.062);
+    border-radius: 25px;
+}
+
+.console_img{
+    max-width: 50%;
+}
