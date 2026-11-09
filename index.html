@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/script.js" defer></script>
-    <title>Retro Gaming-Console.</title>
+    <title>TV Show Finder</title>
 </head>
 
 <body>
     <div id="main_page_container">
-        <header>
-            <h1> Retro Gaming-Consoles </h1>
-        </header>
+        <h1>TV Show Finder</h1>
 
-        <div id="card">
-            <div id="button_container">
-                <button id="load_consoles">Load Consoles</button>
-            </div>
-            <p id="error_message"></p>
-            <p id="summary"></p>
-            <div id="section_display"></div>
+        <div class="card">
+            <label for="show-select">Popular shows</label>
+            <select id="show-select"></select>
         </div>
+
+        <div class="card" id="show-details"></div>
 
         <footer>
             <p>Copyright &copy; 2026 David Wommack.</p>
         </footer>
 
     </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+
 </body>
 
 </html>
