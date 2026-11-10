@@ -85,6 +85,7 @@ function displayDetails(show){
         genre_string += genre.name + ", ";
     }
     genres.textContent = genre_string;
+    genres.className = "genres";
 
     let num_of_seasons = document.createElement("li");
     let num_of_seasons_p = document.createElement("p");
@@ -107,6 +108,7 @@ function displayDetails(show){
     showDetails.appendChild(genres);
 
     let additionalDetails = document.createElement("ul");
+    additionalDetails.className = "stats";
     additionalDetails.appendChild(num_of_seasons);
     additionalDetails.appendChild(num_of_episodes);
     additionalDetails.appendChild(status);

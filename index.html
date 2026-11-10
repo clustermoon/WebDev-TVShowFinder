@@ -3,20 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>TV Show Finder</title>
 </head>
 
 <body>
     <div id="main_page_container">
-        <h1>TV Show Finder</h1>
+        <header>
+            <h1>TV Show Finder</h1>
+        </header>
 
         <div class="card">
             <label for="show-select">Popular shows</label>
             <select id="show-select"></select>
             <p id="message"></p>
+            <div id="show-details"></div>
         </div>
 
-        <div class="card" id="show-details"></div>
+        
 
         <footer>
             <p>Copyright &copy; 2026 David Wommack.</p>
