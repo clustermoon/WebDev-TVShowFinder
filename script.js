@@ -1,5 +1,6 @@
 const showSelect = document.getElementById("show-select");
 const showDetails = document.getElementById("show-details");
+const message = document.getElementById("message");
 
 const requestOptions = {
     method: "GET",
@@ -9,20 +10,31 @@ const requestOptions = {
     }
 };
 
+function showMessage(text){
+    message.textContent = text;
+}
+
 async function loadPopularShows() {
     const url = "https://api.themoviedb.org/3/tv/popular";
+
+    showMessage("Loading popular shows...");
 
     try {
         const res = await fetch(url, requestOptions);
 
         if (!res.ok) {
+            if (res.status === 401){
+                throw new Error("The API token was rejected. Check the token in config.js");
+            }
             throw new Error(`Request failed with status ${res.status}`);
         }
 
         const data = await res.json();
         fillDropdown(data.results)
+        showMessage("");
     } catch (error) {
         console.error(error);
+        showMessage(error.message);
     }
 }
 
@@ -103,18 +115,24 @@ function displayDetails(show){
 
 async function loadShowDetails(id) {
     const url = `https://api.themoviedb.org/3/tv/${id}`;
+    showMessage("Loading Show Details...");
 
     try {
         const res = await fetch(url, requestOptions);
 
         if (!res.ok) {
+            if(res.status = 401){
+                throw new Error(`Request failed because the credentials have expired or are invalid. Failed with status ${res.status}`);
+            }
             throw new Error(`Request failed with status ${res.status}`);
         }
 
         const show = await res.json();
         displayDetails(show);
+        showMessage("");
     } catch (error) {
         console.error(error);
+        showMessage(error);
     }
 }
 
